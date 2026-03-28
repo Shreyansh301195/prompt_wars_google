@@ -1,0 +1,9 @@
+venv/
+node_modules/
+.env
+__pycache__/
+*.pyc
+.git/
+frontend/
+.DS_Store
+solid-coder-*.json
