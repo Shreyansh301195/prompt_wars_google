@@ -1,0 +1,28 @@
+# JeevanSetu.AI — Python Dependencies
+
+# Web Framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+pydantic==2.10.4
+pydantic-settings==2.7.1
+
+# Google Gemini AI
+google-genai==1.7.0
+
+# Google Cloud Services
+google-cloud-speech==2.30.0
+google-cloud-texttospeech==2.21.1
+google-cloud-language==2.16.0
+google-cloud-vision==3.9.0
+
+# HTTP client (for Ollama fallback & Maps API)
+httpx==0.28.1
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.25.0
+pytest-cov==6.0.0
+
+# Utilities
+python-dotenv==1.0.1
