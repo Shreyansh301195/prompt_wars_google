@@ -21,3 +21,34 @@ dist/
 
 # OS
 .DS_Store
+
+
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Env / secrets
+.env
+*.json
+
+# Node / frontend
+node_modules/
+.next/
+dist/
+build/
+out/
+.cache/
+.vercel/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
