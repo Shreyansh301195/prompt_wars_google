@@ -60,22 +60,16 @@ Domain: {domain}
 Urgency: {urgency}
 Extracted Data: {extracted_data}
 
-Return a JSON object with EXACTLY these fields:
-{
-    "actions": [
-        {
-            "id": 1,
-            "title": "Action title",
-            "description": "Detailed description of what to do",
-            "priority": "immediate|high|medium|low",
-            "category": "emergency|medical|safety|communication|logistics|documentation|follow_up",
-            "is_verified": true/false,
-            "verification_notes": "How this action was verified or caveats",
-            "contact_info": "Phone number or contact if relevant (use real emergency numbers like 112, 108, 911)",
-            "location_hint": "Location description if relevant"
-        }
-    ]
-}
+Return a JSON object with an "actions" array. Each action should have these fields:
+- "id": number
+- "title": string
+- "description": string (detailed description of what to do)
+- "priority": "immediate" or "high" or "medium" or "low"
+- "category": "emergency" or "medical" or "safety" or "communication" or "logistics" or "documentation" or "follow_up"
+- "is_verified": boolean
+- "verification_notes": string (how this action was verified or caveats)
+- "contact_info": string (phone number if relevant, use real numbers like 112, 108, 911)
+- "location_hint": string (location description if relevant)
 
 RULES:
 - For medical emergencies, ALWAYS include "Call emergency services" as the first action
