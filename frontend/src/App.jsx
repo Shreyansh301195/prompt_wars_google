@@ -7,7 +7,7 @@ import HistoryPanel from './components/HistoryPanel'
 import ServicesBar from './components/ServicesBar'
 import './index.css'
 
-const API_BASE = 'http://localhost:8000/api'
+const API_BASE = 'https://prompt-wars-google-git-714416148696.europe-west1.run.app/api'
 
 function App() {
   const [isProcessing, setIsProcessing] = useState(false)
@@ -69,21 +69,21 @@ function App() {
       // Simulate stage progression for UX
       const stageTimers = [
         setTimeout(() => {
-          setProcessingStages(prev => prev.map((s, i) => 
-            i === 0 ? { ...s, status: 'complete' } : 
-            i === 1 ? { ...s, status: 'processing' } : s
+          setProcessingStages(prev => prev.map((s, i) =>
+            i === 0 ? { ...s, status: 'complete' } :
+              i === 1 ? { ...s, status: 'processing' } : s
           ))
         }, 1500),
         setTimeout(() => {
-          setProcessingStages(prev => prev.map((s, i) => 
-            i <= 1 ? { ...s, status: 'complete' } : 
-            i === 2 ? { ...s, status: 'processing' } : s
+          setProcessingStages(prev => prev.map((s, i) =>
+            i <= 1 ? { ...s, status: 'complete' } :
+              i === 2 ? { ...s, status: 'processing' } : s
           ))
         }, 3000),
         setTimeout(() => {
-          setProcessingStages(prev => prev.map((s, i) => 
-            i <= 2 ? { ...s, status: 'complete' } : 
-            i === 3 ? { ...s, status: 'processing' } : s
+          setProcessingStages(prev => prev.map((s, i) =>
+            i <= 2 ? { ...s, status: 'complete' } :
+              i === 3 ? { ...s, status: 'processing' } : s
           ))
         }, 4500),
       ]
@@ -101,10 +101,10 @@ function App() {
       }
 
       const data = await res.json()
-      
+
       // Mark all stages complete
       setProcessingStages(prev => prev.map(s => ({ ...s, status: 'complete' })))
-      
+
       setTimeout(() => {
         setResult(data)
         setIsProcessing(false)
@@ -172,7 +172,7 @@ function App() {
           <section className="hero animate-fade-in" aria-label="Welcome section">
             <h2>Transform Chaos into Clarity</h2>
             <p>
-              Paste text, record your voice, upload photos or documents — 
+              Paste text, record your voice, upload photos or documents —
               JeevanSetu.AI instantly converts them into structured, verified, life-saving actions.
             </p>
           </section>
@@ -183,8 +183,8 @@ function App() {
 
         {/* Input Panel */}
         {!isProcessing && !result && (
-          <InputPanel 
-            onProcess={handleProcess} 
+          <InputPanel
+            onProcess={handleProcess}
             isProcessing={isProcessing}
           />
         )}
@@ -197,9 +197,9 @@ function App() {
           }}>
             <strong style={{ color: 'var(--accent-danger)' }}>⚠️ Processing Error</strong>
             <p style={{ marginTop: '8px', color: 'var(--text-secondary)' }}>{error}</p>
-            <button 
+            <button
               onClick={handleNewSession}
-              className="submit-btn" 
+              className="submit-btn"
               style={{ marginTop: '12px', padding: '8px 20px', fontSize: '0.875rem' }}
             >
               Try Again
@@ -215,8 +215,8 @@ function App() {
         {/* Results Dashboard */}
         {result && (
           <>
-            <ResultsDashboard 
-              result={result} 
+            <ResultsDashboard
+              result={result}
               onTTS={handleTTS}
               onNewSession={handleNewSession}
             />
@@ -238,7 +238,7 @@ function App() {
         borderTop: '1px solid var(--border-color)'
       }}>
         <p>
-          JeevanSetu.AI — Powered by Google Gemini | 
+          JeevanSetu.AI — Powered by Google Gemini |
           Built for societal benefit 🌍
         </p>
       </footer>
