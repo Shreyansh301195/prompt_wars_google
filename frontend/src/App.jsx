@@ -7,7 +7,7 @@ import HistoryPanel from './components/HistoryPanel'
 import ServicesBar from './components/ServicesBar'
 import './index.css'
 
-const API_BASE = 'https://prompt-wars-google-git-714416148696.europe-west1.run.app/api'
+const API_BASE = 'https://jeevansetu-api-714416148696.us-central1.run.app'
 // const API_BASE = 'http://localhost:8000/api'
 function App() {
   const [isProcessing, setIsProcessing] = useState(false)
