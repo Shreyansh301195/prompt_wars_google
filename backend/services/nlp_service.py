@@ -61,7 +61,7 @@ class NLPService:
                 entities.append({
                     "name": entity.name,
                     "type": entity_type_map.get(entity.type_, "other"),
-                    "salience": round(entity.salience, 3),
+                    "salience": round(getattr(entity, 'salience', 0.5), 3),
                     "metadata": dict(entity.metadata) if entity.metadata else {}
                 })
 

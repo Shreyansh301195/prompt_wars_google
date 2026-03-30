@@ -19,7 +19,7 @@ print(f"   Key length: {len(os.getenv('GEMINI_API_KEY', ''))}")
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from dotenv import load_dotenv
 from backend.core.config import get_settings
 from backend.core.security import RateLimitMiddleware
 from backend.api.routes import router
@@ -31,7 +31,7 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S"
 )
 logger = logging.getLogger(__name__)
-
+load_dotenv()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
